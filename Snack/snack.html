@@ -1,10 +1,19 @@
 <html lang="en">
 	<head>
+		<title>Snack</title>
 	</head>
 	<body>
 		<canvas class="screen" width="400" height="400">
 			<p>Your browser does not support canvas.</p>
 		</canvas>
+		<style>
+			.screen{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
 		<script>
 			var canvas = document.querySelector('.screen');
 			var ctx = canvas.getContext('2d');
@@ -44,11 +53,11 @@
 			var size=5;
 			var width_=400/size-1,height_=400/size-1;
 			var x=~~(width_*0.5),y=~~(height_*0.5);
-			var direction=0,len=1,maxfood=2;
+			var direction=0,len=1,maxfood=5;
 			var i,j;
 			var end=false;
 			var s_=[],f_=[];
-			var frameRate=30,t=0;
+			var frameRate=10,t=0;
 			var change=true;
 			for(i=0;i<=width_;i++){
 				s_[i]=[];
